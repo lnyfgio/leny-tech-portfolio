@@ -195,7 +195,7 @@ export default function PlatformEngineeringDevOpsProject() {
         </div>
 
         <div className="mt-10 rounded-2xl border border-[#EAE3DF] bg-white p-6 sm:p-8">
-          <h3 className="font-serif text-2xl">What the lab demonstrates</h3>
+          <h3 className="font-serif text-2xl">What the technical implementation demonstrates</h3>
           <div className="mt-6 grid gap-5 sm:grid-cols-2">
             <div>
               <p className="text-sm font-medium text-[#754B59]">
@@ -220,7 +220,7 @@ export default function PlatformEngineeringDevOpsProject() {
             rel="noopener noreferrer"
             className="mt-7 inline-flex rounded-full bg-[#754B59] px-6 py-3 text-sm text-white transition hover:bg-[#5E3B47]"
           >
-            View lab source on GitHub ↗
+            View project source on GitHub ↗
           </a>
         </div>
       </section>

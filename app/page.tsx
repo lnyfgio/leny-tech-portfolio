@@ -357,36 +357,24 @@ export default function Home() {
                   <p className="text-xs tracking-[0.18em] text-[#A16F7B]">
                     {project.category}
                   </p>
-
-                  <span
-                    className={`rounded-full px-3 py-1 text-xs font-medium ${
-                      project.status === "Professional Experience · Explore Technical Implementation →"
-                        ? "bg-[#E5F1E8] text-[#34734B]"
-                        : "bg-[#EAEFF5] text-[#496985]"
-                    }`}
-                  >
-                    {project.status === "Professional Experience · Explore Technical Implementation →"
-                      ? "● Professional Experience · Explore Technical Implementation →"
-                      : "● Professional Experience"}
-                  </span>
+                  {project.number === "01" ? (
+                    <a
+                      href="/projects/platform-engineering-devops"
+                      className="rounded-full bg-[#E5F1E8] px-3 py-1 text-xs font-medium text-[#34734B] transition-colors hover:bg-[#D5E9DA]"
+                    >
+                      ● Professional Experience · Explore Technical Implementation →
+                    </a>
+                  ) : (
+                    <span className="rounded-full bg-[#EAEFF5] px-3 py-1 text-xs font-medium text-[#496985]">
+                      ● Professional Experience
+                    </span>
+                  )}
                 </div>
                 <p className="mt-2 text-sm font-medium text-[#A16F7B]">
                   {project.organization}
                 </p>
                 <h3 className="mt-3 font-serif text-2xl sm:text-3xl">
-                  {project.number === "01" ? (
-                    <a
-                      href="/projects/platform-engineering-devops"
-                      className="transition-colors hover:text-[#A16F7B]"
-                    >
-                      {project.title}
-                      <span className="ml-2 font-sans text-sm text-[#A16F7B]">
-                        Explore Technical Implementation →
-                      </span>
-                    </a>
-                  ) : (
-                    project.title
-                  )}
+                  {project.title}
                 </h3>
                 <p className="mt-4 max-w-3xl text-sm leading-8 text-[#817879]">
                   {project.description}
