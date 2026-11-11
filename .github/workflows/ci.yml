@@ -1,10 +1,15 @@
-name: DevOps Platform CI
+
+name: DevOps Platform CI/CD
 
 on:
   push:
     branches: [main]
   pull_request:
     branches: [main]
+
+permissions:
+  contents: read
+  packages: write
 
 jobs:
   test-and-build:
@@ -33,4 +38,20 @@ jobs:
 
       - name: Build Docker image
         run: docker build -t devops-platform:ci .
-        
+
+      - name: Log in to GitHub Container Registry
+        if: github.event_name == 'push'
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Publish Docker image
+        if: github.event_name == 'push'
+        run: |
+          IMAGE_NAME=$(echo "ghcr.io/${GITHUB_REPOSITORY}/devops-platform" | tr '[:upper:]' '[:lower:]')
+          docker build -t "$IMAGE_NAME:${GITHUB_SHA}" .
+          docker tag "$IMAGE_NAME:${GITHUB_SHA}" "$IMAGE_NAME:latest"
+          docker push "$IMAGE_NAME:${GITHUB_SHA}"
+          docker push "$IMAGE_NAME:latest"
