@@ -1,0 +1,16 @@
+
+node_modules
+npm-debug.log
+.git
+.github
+.env
+.env.*
+coverage
+.DS_Store
+README.md
+tests
+terraform
+kubernetes
+monitoring
+docs
+scripts

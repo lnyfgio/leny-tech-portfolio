@@ -1,0 +1,30 @@
+
+{
+  "name": "devops-engineering-platform",
+  "version": "1.0.0",
+  "description": "End-to-end DevOps engineering demonstration using Node.js, automated testing, Docker, Terraform, and observability.",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "test": "node --test",
+    "test:coverage": "node --experimental-test-coverage --test"
+  },
+  "keywords": [
+    "devops",
+    "nodejs",
+    "ci-cd",
+    "terraform",
+    "docker",
+    "aws",
+    "observability"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.3.0"
+  },
+  "devDependencies": {
+    "supertest": "^7.3.2"
+  }
+}
