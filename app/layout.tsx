@@ -28,12 +28,20 @@ export const metadata: Metadata = {
     url: "https://leny-tech-portfolio.vercel.app",
     siteName: "Leny Flogio Portfolio",
     type: "website",
+    images: [
+      {
+        url: "/images/og-image.png",
+        width: 1792,
+        height: 1024,
+        alt: "Leny Flogio - Cloud, Platform, Engineering",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Leny Flogio | Cloud & Platform Engineer",
-    description:
-      "Engineering reliable systems, with intention.",
+    description: "Engineering reliable systems, with intention.",
+    images: ["/images/og-image.png"],
   },
 };
 
