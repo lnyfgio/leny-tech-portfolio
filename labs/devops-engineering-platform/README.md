@@ -247,7 +247,9 @@ A Kubernetes ServiceMonitor discovers the application Service and configures met
 
 ### Grafana
 
-The project includes a dashboard named **DevOps Engineering Platform Monitoring**.
+The project includes a dashboard named **DevOps Engineering Platform Monitoring**, , providing visibility into application traffic, response performance, and resource utilization.
+
+#### Dashboard Overview
 
 The dashboard contains five panels:
 
@@ -258,6 +260,41 @@ The dashboard contains five panels:
 | HTTP Response Latency (p95) | 95th percentile response duration |
 | Application Process Memory | Process resident memory |
 | Node.js Heap Usage | JavaScript heap utilization |
+
+### Dashboard Overview
+
+The dashboard visualizes application traffic, HTTP response latency,
+process memory consumption, and Node.js heap utilization.
+
+![Grafana Dashboard Overview](docs/images/grafana-dashboard-overview.png)
+
+#### Application Performance
+
+**HTTP Request Rate**
+
+Tracks the number of incoming HTTP requests per second.
+
+![HTTP Request Rate](docs/images/grafana-http-request-rate.png)
+
+**HTTP Response Latency (p95)**
+
+Measures the 95th percentile HTTP response duration, helping identify slower application responses.
+
+![HTTP Response Latency](docs/images/grafana-http-response-latency.png)
+
+#### Resource Monitoring
+
+**Application Process Memory**
+
+Tracks the application's resident process memory consumption.
+
+![Application Process Memory](docs/images/grafana-process-memory.png)
+
+**Node.js Heap Usage**
+
+Monitors memory consumed by the Node.js JavaScript heap.
+
+![Node.js Heap Usage](docs/images/grafana-nodejs-heap.png)
 
 ## 11. Project Scope and Limitations
 

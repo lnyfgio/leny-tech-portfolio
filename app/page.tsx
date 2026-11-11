@@ -35,23 +35,57 @@ const expertise = [
 const projects = [
   {
     number: "01",
-    category: "CLOUD ENGINEERING",
-    title: "AWS Infrastructure & Cost Optimization",
+    status: "Professional Experience · Explore Technical Implementation →",
+    category: "PLATFORM ENGINEERING & DEVOPS",
+    organization: "Macquarie Group",
+    title: "Platform Engineering & DevOps Operations",
     description:
-      "Contributed to cloud infrastructure improvements, cost optimization, and backup and lifecycle management across AWS services.",
-    technologies: ["AWS", "S3", "EFS", "RDS", "DynamoDB"],
+      "Supported the maintenance and operational management of enterprise platform infrastructure and DevOps workflows, including infrastructure automation, deployment processes, containerized environments, and operational support.",
+    technologies: ["AWS", "Terraform", "Docker", "Kubernetes", "CI/CD"],
   },
   {
     number: "02",
+    status: "Professional Experience",
     category: "PLATFORM ENGINEERING",
+    organization: "Macquarie Group",
     title: "ISV Developer Experience",
     description:
-      "Contributed to improving the developer onboarding experience through clearer processes, standards, and technical documentation.",
+      "Contributed to improving developer onboarding through clearer engineering processes, technical standards, and documentation to help teams understand platform workflows.",
     technologies: ["Terraform", "CI/CD", "Documentation"],
   },
   {
     number: "03",
+    status: "Professional Experience",
+    category: "OBSERVABILITY & OPERATIONS",
+    organization: "Macquarie Group",
+    title: "ISAM – High Junction Error Rate Monitoring",
+    description:
+      "Worked on identifying high junction error rates to help reduce noisy alerts through Sumo Logic lookup tables, log search queries, and alerting improvements.",
+    technologies: ["ISAM", "Sumo Logic", "Lookup Tables", "Log Monitoring"],
+  },
+  {
+    number: "04",
+    status: "Professional Experience",
+    category: "CLOUD ENGINEERING",
+    organization: "UnionDigital Bank",
+    title: "AWS Infrastructure & Cost Optimization",
+    description:
+      "Contributed to AWS infrastructure improvements, cost optimization, and backup and lifecycle management across cloud services. Implemented Amazon CloudWatch monitoring to track service health, monitor resource utilization, and improve visibility into infrastructure performance.",
+    technologies: [
+      "AWS",
+      "S3",
+      "EFS",
+      "RDS",
+      "DynamoDB",
+      "EMR",
+      "CloudWatch",
+    ],
+  },
+  {
+    number: "05",
+    status: "Professional Experience",
     category: "ENTERPRISE INTEGRATION",
+    organization: "DXC Technology",
     title: "Amazon Connect & ServiceNow Integration",
     description:
       "Participated in an initiative involving Amazon Connect IVR integration with ServiceNow and Computer Telephony Integration (CTI).",
@@ -319,11 +353,40 @@ export default function Home() {
               </div>
 
               <div>
-                <p className="text-xs tracking-[0.18em] text-[#A16F7B]">
-                  {project.category}
+                <div className="flex flex-wrap items-center justify-between gap-3">
+                  <p className="text-xs tracking-[0.18em] text-[#A16F7B]">
+                    {project.category}
+                  </p>
+
+                  <span
+                    className={`rounded-full px-3 py-1 text-xs font-medium ${
+                      project.status === "Professional Experience · Explore Technical Implementation →"
+                        ? "bg-[#E5F1E8] text-[#34734B]"
+                        : "bg-[#EAEFF5] text-[#496985]"
+                    }`}
+                  >
+                    {project.status === "Professional Experience · Explore Technical Implementation →"
+                      ? "● Professional Experience · Explore Technical Implementation →"
+                      : "● Professional Experience"}
+                  </span>
+                </div>
+                <p className="mt-2 text-sm font-medium text-[#A16F7B]">
+                  {project.organization}
                 </p>
                 <h3 className="mt-3 font-serif text-2xl sm:text-3xl">
-                  {project.title}
+                  {project.number === "01" ? (
+                    <a
+                      href="/projects/platform-engineering-devops"
+                      className="transition-colors hover:text-[#A16F7B]"
+                    >
+                      {project.title}
+                      <span className="ml-2 font-sans text-sm text-[#A16F7B]">
+                        Explore Technical Implementation →
+                      </span>
+                    </a>
+                  ) : (
+                    project.title
+                  )}
                 </h3>
                 <p className="mt-4 max-w-3xl text-sm leading-8 text-[#817879]">
                   {project.description}
