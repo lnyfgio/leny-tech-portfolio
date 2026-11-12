@@ -13,15 +13,27 @@ const expertise = [
     number: "02",
     title: "Platform Engineering",
     description:
-      "Supporting reliable platform operations through infrastructure as code, CI/CD practices, and developer experience improvements.",
-    tags: ["Terraform", "CI/CD", "Developer Experience"],
+      "Supporting reliable platform operations through infrastructure as code, containerization, orchestration, CI/CD practices, and developer experience improvements.",
+    tags: [
+      "Terraform",
+      "Docker",
+      "Kubernetes",
+      "CI/CD",
+      "Developer Experience",
+    ],
   },
   {
     number: "03",
     title: "Observability & Operations",
     description:
-      "Improving operational visibility through monitoring, logging, alerting, production support, and technical documentation.",
-    tags: ["Sumo Logic", "CloudWatch", "Incident Support"],
+      "Improving operational visibility through monitoring, metrics, logging, alerting, production support, and technical documentation.",
+    tags: [
+      "Prometheus",
+      "Grafana",
+      "Sumo Logic",
+      "CloudWatch",
+      "Incident Support",
+    ],
   },
   {
     number: "04",
@@ -229,7 +241,7 @@ export default function Home() {
               Working with
             </p>
             <p className="mt-1 text-sm font-medium text-[#754B59]">
-              AWS · Terraform
+              AWS · Terraform · CICD
             </p>
           </div>
         </div>
